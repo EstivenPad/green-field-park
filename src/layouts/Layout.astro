@@ -1,0 +1,29 @@
+---
+import '../styles/main.css';
+
+interface Props {
+    pageTitle: string
+};
+
+const { pageTitle } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    
+    <title>{`Green Field Park | ${ pageTitle }`}</title>
+</head>
+<body>
+    
+    <slot/>
+    
+    <script src="https://kit.fontawesome.com/226f1d6f45.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</body>
+</html>
