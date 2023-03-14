@@ -6,57 +6,17 @@ interface Props {
 const { cardContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati sed atque veniam repellat pariatur eligendi placeat, inventore earum. Exercitationem odit magnam, quod veniam iste impedit?" } = Astro.props as Props;
 ---
 
-<div class="swiper-slide">
-    <div class="card">
-        <div class="card-blur">
-            <div class="caption">
-                <span class="card-title">{ cardContent }</span>
-                <span class="card-number">01</span>
-            </div>
-        </div>
-    </div>
+<div class="card swiper-slide">
+    <h2>{ cardContent }</h2>
 </div>
 
 <style>   
 .card {
     background-image: url('../images/air-view.jpg');
     background-size: cover;
-    color: var(--base-color);
-    border-radius: 25px;
-    height: 25rem;
-    width: 20rem;
+    border-radius: 8px;
+    width: 18em;
+    height: 18em;
+    color: white;
 }
-
-.card-blur {
-    position: relative;
-    border-radius: 25px;
-    display: flex;
-    height: 100%;
-    width: 100%;
-}
-
-/* .card:hover {
-    transition: backdrop-filter 0.3s ease-out;
-    backdrop-filter: blur(10px);
-} */
-
-.caption {
-    display: inline-block;
-}
-
-.card-title {
-    /* position: absolute; */
-    /* left: 20px; */
-    /* bottom: 15px; */
-}
-
-.card-number {
-    /* position: absolute; */
-    color: var(--secondary-border-color);
-    font-size: 5em;
-    /* right: 0;
-    bottom: 0; */
-}
-
-
 </style>

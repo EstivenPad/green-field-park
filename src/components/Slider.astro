@@ -1,33 +1,51 @@
 ---
 import Card from '../components/Card.astro';
-import '../styles/slider.css';
 ---
 
-<div class="slide-container swiper">
-    <div class="slide-content">
+<div class="container swiper">
+    <div class="slide-container">
         <div class="card-wrapper swiper-wrapper">
-            <Card/>
-            <Card/>
+            <Card cardContent="1"/>
+            <Card cardContent="2"/>
+            <Card cardContent="3"/>
+            <Card cardContent="4"/>
+            <!-- <div class="card swiper-slide">
+                <span>01</span>
+            </div>
+            <div class="card swiper-slide">
+                <span>02</span>
+            </div>
+            <div class="card swiper-slide">
+                <span>03</span>
+            </div>
+            <div class="card swiper-slide">
+                <span>04</span>
+            </div>
+            <div class="card swiper-slide">
+                <span>05</span>
+            </div> -->
         </div>
     </div>
-
     <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next swiper-navBtn"></div>
+    <div class="swiper-button-prev swiper-navBtn"></div>
 </div>
 
 <script >
-    var swiper = new Swiper(".slide-content", {
+    var swiper = new Swiper(".slide-container", {
         slidesPerView: 1,
         spaceBetween: 25,
         loop: true,
-        // autoplay: {
-        //     delay: 2500,
-        //     disableOnInteraction: false,
-        // },
+        grabCursor: "true",
+        fade: "true",
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
+            dynamicBullets: true,
         },
         navigation: {
             nextEl: ".swiper-button-next",
@@ -35,4 +53,39 @@ import '../styles/slider.css';
         },
     });
 </script>
+
+<style>
+.container {
+    max-width: 70em;
+    width: 100%;
+    padding: 2.5em 0;
+}
+
+.slide-container {
+    margin: 0 1.875em;
+    overflow: hidden;
+}
+
+.swiper-navBtn {
+    color: #000;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.swiper-navBtn::before, 
+.swiper-navBtn::after {
+    font-size: 18px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #000;
+}
+
+@media screen and (max-width: 768px){
+    .swiper-navBtn {
+        display: none;
+    }
+}
+</style>
 

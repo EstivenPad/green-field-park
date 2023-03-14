@@ -1,10 +1,21 @@
+---
+import '../styles/header-styles.css';
+---
+
 <header class="header">
     <nav>
         <h2 class="logo">Green Field Park</h2>
         <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Quienes Somos</a></li>
-            <li><a href="#">Terrenos</a></li>
+            <li>
+                <a href="#">Proyectos <img src="" alt=""></a>
+                <ul class="menu_nested">
+                    <li class="item_menu_nested">Casas</li>
+                    <li>Apartamentos</li>
+                    <li>Terrenos</li>
+                </ul>
+            </li>
             <li><a href="#">Contáctanos</a></li>
         </ul>
         <button class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i></button>
