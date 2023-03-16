@@ -7,6 +7,7 @@
     --border-color: rgba(255,255,255,0.3);
     --secondary-border-color: rgba(255,255,255,0.5);
     --swiper-pagination-color: #000;
+    --menu-background-color: #1A202C;
 }
 
 * {
@@ -23,13 +24,11 @@ body {
 
 main {
     display: flex;
+    background-image: linear-gradient(rgba(0,0,0,0.3), var(--border-color)), url('../images/white-house.jpg');
+    background-size: cover;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
-
-h2 {
-    color: var(--base-color);
 }
 
 

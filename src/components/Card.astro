@@ -1,13 +1,16 @@
 ---
 interface Props {
-    cardContent?: string
+    cardContent?: string,
+    cardNumber?: number
 };
 
-const { cardContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati sed atque veniam repellat pariatur eligendi placeat, inventore earum. Exercitationem odit magnam, quod veniam iste impedit?" } = Astro.props as Props;
+const { cardNumber } = Astro.props as Props;
+const { cardContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati sed atque veniam repellat pariatur eligendi placeat, inventore earum. Exercitationem odit magnam, quod veniam iste impedit" } = Astro.props as Props;
 ---
 
 <div class="card swiper-slide">
-    <h2>{ cardContent }</h2>
+    <h2 class="card_number">{ cardNumber}</h2>
+    <p class="card_content">{ cardContent }</p>
 </div>
 
 <style>   
@@ -17,6 +20,22 @@ const { cardContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
     border-radius: 8px;
     width: 18em;
     height: 18em;
-    color: white;
+    padding: 0 30px 10px 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.card_number {
+    font-size: 80px;
+    position: absolute;
+    top: 0;
+    margin-bottom: 30px;
+}
+
+.card_content {
+    
 }
 </style>

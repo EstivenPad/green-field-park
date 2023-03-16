@@ -5,25 +5,10 @@ import Card from '../components/Card.astro';
 <div class="container swiper">
     <div class="slide-container">
         <div class="card-wrapper swiper-wrapper">
-            <Card cardContent="1"/>
-            <Card cardContent="2"/>
-            <Card cardContent="3"/>
-            <Card cardContent="4"/>
-            <!-- <div class="card swiper-slide">
-                <span>01</span>
-            </div>
-            <div class="card swiper-slide">
-                <span>02</span>
-            </div>
-            <div class="card swiper-slide">
-                <span>03</span>
-            </div>
-            <div class="card swiper-slide">
-                <span>04</span>
-            </div>
-            <div class="card swiper-slide">
-                <span>05</span>
-            </div> -->
+            <Card cardNumber={1}/>
+            <Card cardNumber={2}/>
+            <Card cardNumber={3}/>
+            <Card cardNumber={4}/>
         </div>
     </div>
     <div class="swiper-pagination"></div>
@@ -38,10 +23,10 @@ import Card from '../components/Card.astro';
         loop: true,
         grabCursor: "true",
         fade: "true",
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
+        // autoplay: {
+        //     delay: 2500,
+        //     disableOnInteraction: false,
+        // },
         pagination: {
             el: ".swiper-pagination",
             clickable: true,

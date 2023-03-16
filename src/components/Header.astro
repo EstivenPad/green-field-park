@@ -1,32 +1,80 @@
 ---
-import '../styles/header-styles.css';
+import '../styles/menu-style.css';
 ---
 
 <header class="header">
-    <nav>
-        <h2 class="logo">Green Field Park</h2>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Quienes Somos</a></li>
-            <li>
-                <a href="#">Proyectos <img src="" alt=""></a>
-                <ul class="menu_nested">
-                    <li class="item_menu_nested">Casas</li>
-                    <li>Apartamentos</li>
-                    <li>Terrenos</li>
-                </ul>
-            </li>
-            <li><a href="#">Contáctanos</a></li>
-        </ul>
-        <button class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i></button>
+    <nav class="menu">
+        <section class="menu_container">
+            <h2 class="menu_logo">Green Field Park</h2>
+            <ul class="menu_links">
+                <li class="menu_item"><a class="menu_link" href="#">Inicio</a></li>
+                <li class="menu_item"><a class="menu_link" href="#">Quienes Somos</a></li>
+                <li class="menu_item menu_item--show">
+                    <a class="menu_link" href="#">Proyectos <img src="src/assets/arrow.svg" class="menu_arrow"></a>
+                    <ul class="menu_nesting">
+                        <li class="menu_inside"><a href="#" class="menu_link menu_link--inside">Casas</a></li>
+                        <li class="menu_inside"><a href="#" class="menu_link menu_link--inside">Apartamentos</a></li>
+                        <li class="menu_inside"><a href="#" class="menu_link menu_link--inside">Terrenos</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a href="#" class="menu_link">Contáctanos</a></li>
+            </ul>
+
+            <div class="menu_hamburguer">
+                <img src="src/assets/menu.svg" alt="">
+            </div>
+        </section>
     </nav>
 </header>
 
-<style>   
-.btn-whatsapp {
-    font-size: 2rem;
-    color: var(--base-color);
-    background-color: transparent;
-    border: none;
-}
-</style>
+<script is:inline>
+    (function(){
+        const listElements = document.querySelectorAll('.menu_item--show');
+        const list = document.querySelector('.menu_links');
+        const menu = document.querySelector('.menu_hamburguer');
+
+        const addClick = () => {
+            listElements.forEach(element => {
+                element.addEventListener('click', () => {
+                    let subMenu = element.children[1];
+                    let height = 0;
+                    element.classList.toggle('menu_item--active');
+                    
+                    if(subMenu.clientHeight === 0)
+                        height = subMenu.scrollHeight;
+
+                    subMenu.style.height = `${height}px`;
+
+                    
+                });
+            });
+        }
+
+        const deleteStyleHeight = () => {
+            listElements.forEach(element => {
+                if(element.children[1].getAttribute('style')){
+                    element.children[1].removeAttribute('stryle');
+                    element.classList.remove('menu_item--active');
+                } 
+            })
+        }
+        
+        window.addEventListener('resize', ()=>{
+            if(window.innerWidth > 800){
+                deleteStyleHeight();
+
+                if(list.classList.contains('menu_links--show'))
+                    list.classList.remove('menu_links--show'); 
+                
+            }else{
+                addClick();
+            }
+        });
+
+        if(window.innerWidth <= 800){
+            addClick();
+        }
+
+        menu.addEventListener('click', () => list.classList.toggle('menu_links--show'));
+    })();
+</script>
