@@ -5,10 +5,18 @@ import '../styles/menu-style.css';
 <header class="header">
     <nav class="menu">
         <section class="menu_container">
+
             <h2 class="menu_logo">Green Field Park</h2>
+
             <ul class="menu_links">
-                <li class="menu_item"><a class="menu_link" href="#">Inicio</a></li>
-                <li class="menu_item"><a class="menu_link" href="#">Quienes Somos</a></li>
+                <li class="menu_item">
+                    <a class="menu_link" href="#">Inicio</a>
+                </li>
+
+                <li class="menu_item">
+                    <a class="menu_link" href="#">Quienes Somos</a>
+                </li>
+                
                 <li class="menu_item menu_item--show">
                     <a class="menu_link" href="#">Proyectos <img src="src/assets/arrow.svg" class="menu_arrow"></a>
                     <ul class="menu_nesting">
@@ -17,7 +25,10 @@ import '../styles/menu-style.css';
                         <li class="menu_inside"><a href="#" class="menu_link menu_link--inside">Terrenos</a></li>
                     </ul>
                 </li>
-                <li class="menu_item"><a href="#" class="menu_link">Contáctanos</a></li>
+
+                <li class="menu_item">
+                    <a href="#" class="menu_link">Contáctanos</a>
+                </li>
             </ul>
 
             <div class="menu_hamburguer">
@@ -32,7 +43,7 @@ import '../styles/menu-style.css';
         const listElements = document.querySelectorAll('.menu_item--show');
         const list = document.querySelector('.menu_links');
         const menu = document.querySelector('.menu_hamburguer');
-
+        
         const addClick = () => {
             listElements.forEach(element => {
                 element.addEventListener('click', () => {
@@ -45,7 +56,6 @@ import '../styles/menu-style.css';
 
                     subMenu.style.height = `${height}px`;
 
-                    
                 });
             });
         }
@@ -53,7 +63,7 @@ import '../styles/menu-style.css';
         const deleteStyleHeight = () => {
             listElements.forEach(element => {
                 if(element.children[1].getAttribute('style')){
-                    element.children[1].removeAttribute('stryle');
+                    element.children[1].removeAttribute('style');
                     element.classList.remove('menu_item--active');
                 } 
             })

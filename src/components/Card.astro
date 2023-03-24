@@ -1,22 +1,24 @@
 ---
 interface Props {
+    cardBackground?: string,
     cardContent?: string,
     cardNumber?: number
 };
 
+const { cardBackground } = Astro.props as Props;
 const { cardNumber } = Astro.props as Props;
 const { cardContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati sed atque veniam repellat pariatur eligendi placeat, inventore earum. Exercitationem odit magnam, quod veniam iste impedit" } = Astro.props as Props;
 ---
 
-<div class="card swiper-slide">
-    <h2 class="card_number">{ cardNumber}</h2>
-    <p class="card_content">{ cardContent }</p>
+<div class={`card swiper-slide ${cardBackground}`}>
+    <h2 class="card_number">{cardNumber}</h2>
+    <p class="card_content">{cardContent}</p>
 </div>
 
-<style>   
+<style> 
 .card {
-    background-image: url('../images/air-view.jpg');
     background-size: cover;
+    background-position: center;
     border-radius: 8px;
     width: 18em;
     height: 18em;
@@ -35,7 +37,15 @@ const { cardContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
     margin-bottom: 30px;
 }
 
-.card_content {
-    
+.card-background-1{
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('../images/slider-1.jpg');
+}
+
+.card-background-2{
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('../images/slider-2.jpg');
+}
+
+.card-background-3{
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url('../images/slider-3.jpg');
 }
 </style>

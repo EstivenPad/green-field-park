@@ -3,11 +3,16 @@
 
 :root { 
     font-size: 16px;
-    --base-color: #fff;
+    --green: 9, 129, 74;
+    --white: 255, 255, 255;
+    --black: 2, 2, 2;
+    --menu: 229, 198, 135;
     --border-color: rgba(255,255,255,0.3);
     --secondary-border-color: rgba(255,255,255,0.5);
+    --header-footer-border-color: #38b000;
     --swiper-pagination-color: #000;
     --menu-background-color: #1A202C;
+    --hover-menu-color: #008000;
 }
 
 * {
@@ -18,17 +23,22 @@
 }
 
 body {
-    background-color: #efefef;
+    background-color: #fcfffc;
     min-height: 100vh;
 }
 
-main {
+.main-content {
     display: flex;
-    background-image: linear-gradient(rgba(0,0,0,0.3), var(--border-color)), url('../images/white-house.jpg');
     background-size: cover;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-image: linear-gradient(rgba(255,255,255,0.1), #0000004d), url('../images/white-house.jpg');
+}
+
+.information{
+    min-height: 90vh;
+    background-color: #2ba84a;
 }
 
 
