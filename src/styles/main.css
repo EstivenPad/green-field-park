@@ -7,16 +7,11 @@
     --white: 255, 255, 255;
     --black: 2, 2, 2;
     --menu: 229, 198, 135;
-    --border-color: rgba(255,255,255,0.3);
-    --secondary-border-color: rgba(255,255,255,0.5);
-    --header-footer-border-color: #38b000;
     --swiper-pagination-color: #000;
-    --menu-background-color: #1A202C;
-    --hover-menu-color: #008000;
 }
 
 * {
-    font-family: 'Poppins', 'Didact Gothic', 'Outfit', sans-serif;
+    font-family: 'Poppins', 'Didact Gothic', 'Outfit', Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,6 +22,10 @@ body {
     min-height: 100vh;
 }
 
+h2:not(.menu_logo, .card_number){
+    font-size: 3rem;
+}
+
 .main-content {
     display: flex;
     background-size: cover;
@@ -34,11 +33,6 @@ body {
     align-items: center;
     min-height: 100vh;
     background-image: linear-gradient(rgba(255,255,255,0.1), #0000004d), url('../images/white-house.jpg');
-}
-
-.information{
-    min-height: 90vh;
-    background-color: #2ba84a;
 }
 
 

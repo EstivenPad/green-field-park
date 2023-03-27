@@ -2,43 +2,37 @@
 import Card from '../components/Card.astro';
 ---
 
-<div class="container swiper">
-    <div class="slide-container">
-        <div class="card-wrapper swiper-wrapper">
-            <Card cardNumber={1} cardBackground="card-background-1"/>
-            <Card cardNumber={2} cardBackground="card-background-2"/>
-            <Card cardNumber={3} cardBackground="card-background-3"/>
+<section class="slider">
+    <h2>Quienes Somos</h2>
+    <div class="container swiper">
+        <div class="slide-container">
+            <div class="card-wrapper swiper-wrapper">
+                <Card cardNumber={1} cardBackground="card-background-1"/>
+                <Card cardNumber={2} cardBackground="card-background-2"/>
+                <Card cardNumber={3} cardBackground="card-background-3"/>
+            </div>
         </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
     </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-next swiper-navBtn"></div>
-    <div class="swiper-button-prev swiper-navBtn"></div>
-</div>
-
-<script >
-    var swiper = new Swiper(".slide-container", {
-        slidesPerView: 1,
-        spaceBetween: 25,
-        loop: true,
-        grabCursor: "true",
-        fade: "true",
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            dynamicBullets: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-</script>
+</section>
 
 <style>
+h2 {
+    text-align: center;
+    font-size: 3em;
+    color: #2ba84a;
+}
+
+.slider{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
 .container {
     max-width: 70em;
     width: 100%;
@@ -72,4 +66,29 @@ import Card from '../components/Card.astro';
     }
 }
 </style>
+
+
+<script >
+    var swiper = new Swiper(".slide-container", {
+        slidesPerView: 1,
+        spaceBetween: 25,
+        loop: true,
+        grabCursor: "true",
+        fade: "true",
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
 

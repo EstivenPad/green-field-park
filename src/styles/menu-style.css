@@ -1,6 +1,4 @@
 .menu {
-    /* background-color: #fff; */
-    color: rgb(var(--black));
     height: 4.375rem;
     border-bottom: 2px solid #2ba84a;
 }
@@ -28,8 +26,6 @@
 }
 
 .menu_item {
-    /* border-radius: 25px;
-    background-color: #2ba84a; */
     list-style: none;
     position: relative;
     height: 100%;
@@ -47,9 +43,7 @@
 }
 
 .menu_link:hover {
-    /* background-color: #073b3a; */
     color: #2ba84a;
-    
 }
 
 .menu_item:hover {
@@ -84,7 +78,6 @@
 }
 
 .menu_link--inside:hover {
-    /* background-color: #000; */
     color: #2ba84a;
 }
 
@@ -167,13 +160,13 @@
 
     .menu_item--active {
        --transform: rotate(0);
-       --background: rgb(var(--green));
-       /* --color: rgb(var(--green)); */
-    
     }
+
+    .menu_item--active > a {
+         color: #2ba84a;
+     }
 
     .menu_item--show {
         background-color: var(--background);
-        /* color: var(--color); */
     }
 }
