@@ -1,11 +1,63 @@
+---
+import { ContactForm } from '../components/react-components/ContactForm.jsx';
+---
+
 <section id="contact-section">
-    <h2>Contactanos</h2>
+    <img id="business-deal" src="./src/assets/business_deal.svg" alt="business">
+    <div class="contact-container">
+        <h2 id="contact-title"><span id="contact-title-wrapper">¿Te interesa?<br>Contactanos</span>👋</h2>
+        
+        <ContactForm client:load/>
+    </div>
 </section>
 
 <style>
+
 #contact-section{
+    position: relative;
     height: 100vh;
     width: 100vw;
+    padding: 2.5rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 12rem;
+}
+
+#business-deal{
+    position: absolute;
+    left: 8rem;
+    z-index: 2;
+    width: 35%;
+}
+
+#contact-title{
     text-align: center;
+    margin-bottom: 2rem;
+}
+
+#contact-title-wrapper{
+    color: #2ba84a;
+}
+
+#contact-title-wrapper:hover{
+    transition: color .3s ease-in-out;
+    
+}
+
+@media (max-width: 800px){
+    #business-deal{
+        display: none;
+    }
+
+}
+
+@media (max-width: 480px) {
+    #contact-section{
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 </style>
