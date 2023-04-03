@@ -16,7 +16,6 @@ const { pageTitle } = Astro.props as Props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="src/assets/leaf.svg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
     <title>{`Green Field Park | ${ pageTitle }`}</title>
 </head>
 <body>
@@ -25,6 +24,7 @@ const { pageTitle } = Astro.props as Props;
 
     <script src="https://kit.fontawesome.com/226f1d6f45.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    
 </body>
 </html>
