@@ -1,18 +1,60 @@
-<section class="information">
-    <h2 id="label">Green Field Park</h2>
+---
+import Card_Information from './Card_Information.astro';
+---
+
+<section id="information">
+    <h2 class="title-information">Proyectos</h2>
+    <div class="container-information">
+        <Card_Information nameImage="card-image-2" cardTitle="Casas"/>
+        <Card_Information nameImage="card-image-3" cardTitle="Apartamentos"/>
+        <Card_Information nameImage="card-image-1" cardTitle="Terrenos"/>
+    </div>
 </section>
 
 <style>
-.information{
-    min-height: 100vh;
-    background-color: #2ba84a;
+/* #information{
+    background-color:#2ba84a;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
 
-    display: grid;
-    place-items: center;
+#information{
+    background-color:#2ba84a;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
 }
 
-#label{
+/* .title-information{
+    text-align: center;
+    margin-bottom: 2rem;
     color: #fff;
-    text-shadow: #000;
+} */
+
+.title-information{
+    /* text-align: center; */
+    margin-bottom: 1rem;
+    color: #fff;
 }
+
+/* .container-information{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+} */
+
+.container-information{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem;
+}
+
 </style>

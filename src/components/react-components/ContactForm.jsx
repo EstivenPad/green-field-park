@@ -19,13 +19,13 @@ export const ContactForm = () => {
     const sendEmail = async (e) => {
         e.preventDefault();
     
-        await emailjs.sendForm('service_zfsxpnn', 'contact_form', form.current, 'F35HkxuJd2m4mkwd6')
+        /*await emailjs.sendForm('service_zfsxpnn', 'contact_form', form.current, 'F35HkxuJd2m4mkwd6')
             .then((result) => {
                 showToastSuccess();
             }, (error) => {
                 showToastError();
             });
-            
+        */ 
         onResetForm();
     };
 
@@ -79,7 +79,7 @@ export const ContactForm = () => {
                     <label htmlFor="floating_message" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mensaje</label>
                 </div>
 
-                <button type="submit" className="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Enviar</button>
+                <button type="submit" style={{ backgroundColor: "#2ba84a" }} className="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Enviar</button>
             </form>
             <ToastContainer/>
         </>
