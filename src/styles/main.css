@@ -34,15 +34,6 @@ h2:not(.menu_logo, .card_number){
     font-weight: bold;
 }
 
-.main-content {
-    display: flex;
-    background-size: cover;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: linear-gradient(rgba(255,255,255,0.1), #0000004d), url('../images/white-house.jpg');
-}
-
 
 
 

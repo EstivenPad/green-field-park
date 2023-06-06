@@ -19,13 +19,13 @@ export const ContactForm = () => {
     const sendEmail = async (e) => {
         e.preventDefault();
     
-        /*await emailjs.sendForm('service_zfsxpnn', 'contact_form', form.current, 'F35HkxuJd2m4mkwd6')
+        await emailjs.sendForm('service_zfsxpnn', 'contact_form', form.current, 'F35HkxuJd2m4mkwd6')
             .then((result) => {
                 showToastSuccess();
             }, (error) => {
                 showToastError();
             });
-        */ 
+        
         onResetForm();
     };
 
@@ -38,18 +38,18 @@ export const ContactForm = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });;
+    });
 
     const showToastError = () => toast.error('Ha occurrido un error!', {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            });
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
 
     return (
         <>

@@ -6,13 +6,13 @@ import Header from '../components/Header.astro';
 import Information from '../components/Information.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+import Main from '../components/Main.astro';
 ---
 <Layout pageTitle="Home">
     
     <Header/>
 
-    <section class="main-content">
-    </section>
+    <Main />
     
     <Slider/>
 
@@ -34,7 +34,7 @@ import Footer from '../components/Footer.astro';
 
 <script>
     const dot = document.querySelector(".to-top");
-
+    
     window.addEventListener("scroll", () => {
         if(window.pageYOffset > 100)
             dot.classList.add("active");

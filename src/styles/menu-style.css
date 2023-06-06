@@ -1,6 +1,5 @@
 .menu {
     height: 4.375rem;
-    border-bottom: 2px solid #2ba84a;
 }
 
 .menu_logo{
@@ -51,36 +50,6 @@
 .menu_item:hover {
     --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     --transform: rotateX(180deg);
-    
-}
-
-.menu_arrow {
-    transform: var(--transform);
-    transition: transform .4s;
-    display: block;
-    margin-left: 3px;
-}
-
-.menu_nesting {
-    border: solid 1px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    list-style: none;
-    transition: clip-path .3s;
-    clip-path: var(--clip);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: max-content;
-    transform: translateY(100%);
-    background-color: #fff;
-}
-
-.menu_link--inside {
-    padding: 1.25em 6.25em 1.25em 1.25em;
-}
-
-.menu_link--inside:hover {
-    color: #2ba84a;
 }
 
 .menu_hamburguer {
@@ -137,28 +106,6 @@
         padding: 25px 0;
         padding-left: 30px;
         height: auto;
-    }
-
-    .menu_arrow {
-        margin-left: auto;
-        margin-right: 20px;
-    }
-
-    .menu_nesting {
-        display: grid;
-        position: unset;
-        width: 100%;
-        transform: translateY(0);
-        height: 0;
-        transition: height .3s;
-        border: 0;
-        border-radius: 0;
-    }
-
-    .menu_link--inside {
-        width: 90%;
-        margin-left: auto;
-        border-left: 1px solid black;
     }
 
     .menu_item--active {

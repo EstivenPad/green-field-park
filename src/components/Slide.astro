@@ -1,18 +1,19 @@
 ---
 interface Props {
-    cardBackground?: string,
-    cardContent?: string,
-    cardNumber?: number
+    slideBackground?: string,
+    slideContent?: string,
+    slideNumber?: string
 };
 
-const { cardBackground } = Astro.props as Props;
-const { cardNumber } = Astro.props as Props;
-const { cardContent = "QLorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati sed atque veniam repellat pariatur eligendi placeat, inventore earum. Exercitationem odit magnam, quod veniam iste impedit" } = Astro.props as Props;
+const { slideNumber } = Astro.props as Props;
+const { slideBackground } = Astro.props as Props;
+const { slideContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati sed atque veniam repellat pariatur eligendi placeat, inventore earum. Exercitationem odit magnam, quod veniam iste impedit." } = Astro.props as Props;
+
 ---
 
-<div class={`card swiper-slide ${cardBackground}`}>
-    <h2 class="card_number">{cardNumber}</h2>
-    <p class="card_content">{cardContent}</p>
+<div class={`card swiper-slide  ${slideBackground}`}>
+    <h2 class="card_number">{ slideNumber }</h2>
+    <p class="card_content">{ slideContent }</p>
 </div>
 
 <style> 
@@ -21,7 +22,7 @@ const { cardContent = "QLorem ipsum dolor, sit amet consectetur adipisicing elit
     background-position: center;
     border-radius: 8px;
     width: 18em;
-    height: 18em;
+    height: 26em;
     padding: 0 30px 10px 30px;
     position: relative;
     display: flex;
@@ -35,7 +36,12 @@ const { cardContent = "QLorem ipsum dolor, sit amet consectetur adipisicing elit
     font-size: 80px;
     position: absolute;
     top: 0;
-    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.card_content {
+    font-size: 20px;
+    padding: 0 15px;
 }
 
 .card-background-1{
